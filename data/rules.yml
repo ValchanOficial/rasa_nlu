@@ -1,0 +1,20 @@
+version: "3.1"
+
+rules:
+- rule: Activate form
+  steps:
+  - intent: github_repositories
+  - action: utter_github_username
+  - action: github_form
+  - active_loop: github_form
+
+- rule: Submit form
+  condition:
+  - active_loop: github_form
+  steps:
+  - action: github_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_get_github_repositories
+  - action: utter_submit

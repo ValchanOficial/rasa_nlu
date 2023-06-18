@@ -1,0 +1,33 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: github_repositories
+  examples: |
+    - github
+    - github repo
+    - repo
+    - repositories
+    - github repositories
+    - git
+    - git repo
+    - git repositories
+    - show me my github repositories
+    - show me my repositories
+    - what are my github repositories
+    - what are my repositories

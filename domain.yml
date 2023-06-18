@@ -1,0 +1,42 @@
+version: "3.1"
+
+config:
+  store_entities_as_slots: true
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - github_repositories
+
+actions:
+  - action_get_github_repositories
+
+entities:
+  - github_username
+
+slots:
+  github_username:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: github_form
+        requested_slot: github_username
+
+forms:
+  github_form:
+    required_slots:
+      - github_username
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  utter_github_username:
+  - text: "What is your GitHub username?"
+  utter_github_response:
+  - text: "Here are the repositories of {github_username}:\n\n{repositories}"
+  utter_submit:
+  - text: "Thanks, all done!"
