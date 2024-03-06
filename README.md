@@ -12,5 +12,25 @@
 
 ![rasa](https://github.com/ValchanOficial/rasa_nlu/assets/16228014/09851d76-1779-45b9-8cc6-3775eaf7dda6)
 
+POST http://localhost:5055/webhook  
+Payload:
+```json
+{
+    "next_action": "action_name",
+    "tracker": {
+        "sender_id": "user_id",
+        "slots": {
+            "slot_name": "slot_value"
+        },
+        "latest_message": {
+            "text": "latest_message_from_user"
+        }
+    }
+}
+```
+
+
 
 https://rasa.com/docs/rasa/playground/
+
+
