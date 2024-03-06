@@ -13,7 +13,7 @@
 ![rasa](https://github.com/ValchanOficial/rasa_nlu/assets/16228014/09851d76-1779-45b9-8cc6-3775eaf7dda6)
 
 POST http://localhost:5055/webhook  
-Payload:
+Example payload:
 ```json
 {
     "next_action": "action_name",
